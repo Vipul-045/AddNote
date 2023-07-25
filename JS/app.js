@@ -33,19 +33,20 @@ function showNotes() {
     let html = "";
     notesObj.forEach(function (element, index) {
         html += `
-        <div class="row container-fluid" id="notes">
             <div class="my-2 mx-2 card" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Note $(index+1)</h5>
+                    <h5 class="card-title">Note ${index+1}</h5>
                     <p class="card-text">${element}</p>
                     <button href="#" class="btn btn-primary" z-index=1> Delete Note</button>
                 </div>
-                </div>
-                </div>;`
+                </div>`;
     });
     let notesElm = document.getElementById('notes');
     if (notesObj.length != 0) {
         notesElm.innerHTML = html;
+    }
+    else {
+        notesElm.innerHTML = `Nothing to show! Use "Add a Note" section above to add notes`
     }
 
 }
